@@ -1,0 +1,24 @@
+<div class="container-sm">
+    <p style="font-size: 23px;margin-top: 46px;text-transform: uppercase;">Upload Documents</p>
+    <table class="table table-sm align-middle" style="text-align: center; border: 2px solid white;font-size: 11px;">
+        <thead style="background-color: #59baa6">
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Number</th>
+                <th scope="col">File Name</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of PDFList">
+                <td>{{p.createdOn| date : "dd-MM-yyyy" }}</td>
+                <!-- <td>{{p.path.split('PDF/').pop().split('/')[1]}}</td> -->
+                <td>{{p.id}}</td>
+                <td>{{p.fileName}}</td>
+                <!-- <td><button style="background-color: #59baa6;border: none;padding:0px 12px 0px 12px ;border-radius: 3px;">View</button></td> -->
+                <td><a [href]="p.id" target="_blank" class="newbtn" [download]="p.fileName">VIEW</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

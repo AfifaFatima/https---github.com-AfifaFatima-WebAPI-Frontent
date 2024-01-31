@@ -4,6 +4,12 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
+import { environment } from './src/environments/environment';
+import { enableProdMode } from '@angular/core';
+
+if (environment.production) {
+  enableProdMode();
+}
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {

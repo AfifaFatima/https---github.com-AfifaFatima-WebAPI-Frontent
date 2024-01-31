@@ -1,0 +1,114 @@
+<!-- <app-header></app-header> -->
+<!-- <div class="container">
+    <div class="main">
+      <div class="text-field">
+        <form [formGroup]= "signinForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-12 p-3" style="display: grid;">
+              <label for="email">Enter Email:</label>
+              <input formControlName="email" class="p-2 mt-2" type="email" placeholder="Enter Email Address" required autocomplete="off">
+              <div *ngIf="signinForm.get('email').hasError('email') && signinForm.get('email').touched" class="text-danger">
+                Invalid email address
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-12 p-3" style="display: grid;">
+              <label for="password">Enter Password:</label>
+              <input formControlName="password" class="p-2 mt-2" type="password" placeholder="Enter Password" required autocomplete="off">
+              <div *ngIf="signinForm.get('password').hasError('minlength') && signinForm.get('password').touched" class="text-danger">
+                Password must be at least 6 characters
+              </div>
+            </div>
+          </div>
+  
+          <div class="login-btn text-center mt-2">
+            <button class="btn btn-primary" type="submit">SIGNIN</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> -->
+
+<!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com -->
+<section class="gradient-form h-full bg-neutral-200 dark:bg-neutral-700">
+  <div class="container h-full p-10">
+    <div class="g-6 flex h-full flex-wrap h-full items-center justify-center text-neutral-800 dark:text-neutral-200">
+      <div class="w-full">
+        <div class="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
+          <div class="g-0 lg:flex lg:flex-wrap">
+            <!-- Left column container-->
+            <div class="md:px-0 lg:w-6/12">
+              <div class="md:mx-6 md:p-12">
+                <!--Logo-->
+                <div class="text-center">
+                  <h4 class="mb-2 mt-1 pb-1 text-xl font-semibold"> Login Form! </h4>
+                </div>
+
+                <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+                  <p class="mb-4 text-danger">Please login to your account</p>
+                  <!--Username input-->
+                  <div class="relative mb-4" data-te-input-wrapper-init>
+                    <label for="exampleFormControlInput1"
+                      class="pointer-events-none relative left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Email
+                    </label>
+                    <input type="email" formControlName="email"
+                      class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+                      placeholder="you@example.com" id="exampleFormControlInput1" autocomplete="off" />
+                    <div *ngIf="signinForm.get('email').hasError('email') && signinForm.get('email').touched"
+                      class="text-danger">
+                      Invalid email address
+                    </div>
+                  </div>
+
+                  <!--Password input-->
+                  <div class="relative mb-4" data-te-input-wrapper-init>
+                    <label for="exampleFormControlInput11"
+                      class="pointer-events-none relative left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Password
+                    </label>
+                    <input type="password" formControlName="password" autocomplete="off"
+                      class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+                      placeholder="Enter Password" id="exampleFormControlInput11" placeholder="Password" />
+                    <div *ngIf="signinForm.get('password').hasError('minlength') && signinForm.get('password').touched"
+                      class="text-danger">
+                      Password must be at least 6 characters
+                    </div>
+                  </div>
+
+                  <!--Submit button-->
+                  <div class="mb-2 pb-1 pt-1 text-center">
+                    <button
+                      class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+                      type="submit" data-te-ripple-init data-te-ripple-color="light" style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);">
+                      Log in</button>
+
+                    <!--Forgot password link-->
+                    <a href="#!">Forgot password?</a>
+                  </div>
+
+                  <!--Register button-->
+                  <div class="flex items-center justify-between ">
+                    <p class="mb-0 mr-2">Don't have an account?</p>
+                    <button type="button" (click)="onRegister()"
+                      class="inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-danger-600 focus:border-danger-600 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+                      data-te-ripple-init data-te-ripple-color="light">
+                      Register
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- Right column container with background and description-->
+            <div class="px-4 md:px-0 lg:w-6/12"
+              style="background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)">
+              <div class="mb-4 h-100 w-full p-2 object-cover">
+                <img class="h-full w-full" src="../../assets/images/login.png" alt="logo" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
