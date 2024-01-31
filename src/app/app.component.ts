@@ -7,12 +7,13 @@ import { SigninComponent } from './signin/signin.component';
 import { HeaderComponent } from './header/header.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SignupComponent } from './signup/signup.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, UploadDocumentsComponent,SignupComponent, ViewDocumentsComponent, SigninComponent, HeaderComponent, ToastrModule],
+  imports: [CommonModule, RouterOutlet, UploadDocumentsComponent, SignupComponent, ForgetPasswordComponent, ViewDocumentsComponent, SigninComponent, HeaderComponent, ToastrModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -18,6 +18,7 @@ import { HeaderComponent } from "../header/header.component";
 
 export class SigninComponent implements OnInit {
 
+
   signinForm: any;
   registerForm: any;
 
@@ -45,5 +46,8 @@ export class SigninComponent implements OnInit {
   }
   onRegister() {
     this.router.navigate(['signup'])
+  }
+  reset() {
+    this.router.navigate(['resetPassword'])
   }
 }
