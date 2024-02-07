@@ -2,7 +2,7 @@
 <div class="px-10 py-3 block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
     <p class="mb-2 mt-1 pb-1 text-xl font-semibold">View Documents</p>
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 text-center">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 py-3 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Number</th>
@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let p of PDFList">
+            <tr class="bg-white dark:bg-gray-800 dark:border-gray-700" *ngFor="let p of PDFList">
                 <td>{{p.createdOn| date : "dd-MM-yyyy" }}</td>
                 <td>{{p.id}}</td>
                 <td>{{p.fileName}}</td>
