@@ -5,14 +5,15 @@ import { provideClientHydration } from '@angular/platform-browser';
 import { FileService } from '../file.service';
 import {HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
-  selector: 'app-upload-documents',
-  standalone: true,
-  imports: [ CommonModule, RouterOutlet, HttpClientModule ],
-  providers: [ HttpClientModule, FileService ],
-  templateUrl: './upload-documents.component.html',
-  styleUrl: './upload-documents.component.css'
+    selector: 'app-upload-documents',
+    standalone: true,
+    providers: [HttpClientModule, FileService],
+    templateUrl: './upload-documents.component.html',
+    styleUrl: './upload-documents.component.css',
+    imports: [CommonModule, RouterOutlet, HttpClientModule, HeaderComponent]
 })
 export class UploadDocumentsComponent {
   constructor( private router: Router, private _snackBar: MatSnackBar, private fileService: FileService) { }

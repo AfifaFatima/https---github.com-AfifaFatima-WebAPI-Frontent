@@ -1,10 +1,10 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { environment } from '../environments/environment';
-import { headers } from '../environments/environment';
+import { environment, headers } from '../environments/environment';
 import { Observable, catchError, tap, throwError } from 'rxjs';
 import { saveAs } from "file-saver";
+import e from 'cors';
 
 @Injectable({
   providedIn: 'root'
@@ -20,27 +20,17 @@ export class FileService {
     let res = this.http.post(url, formData);
     return res;
   }
-   DownloadPDF(id: any) {
-     var url = environment.baseURLNew + "/api/UploadDocument/GetDownloadPDF?fileName=&id=";
-   let res = this.http.get(url, { headers: headers });
-     return res;
-   }
-  // downloadPDF(id: any) {
-  //   const url = `${environment.baseURLNew}api/UploadDocument/GetDownloadPDF?id=${id}`;
-  //   let res = this.http.get(url, { headers: headers });
-  //   return res;
-  // }
+  //  DownloadPDF(id: any) {
+  //    var url = environment.baseURLNew + "/api/UploadDocument/GetDownloadPDF?fileName=&id=";
+  //  let res = this.http.get(url, { headers: headers });
+  //    return res;
+  //  }
 
-  // downloadPDF(id: any): Observable<HttpResponse<Blob>> {
-  //   const url = `${environment.baseURLNew}api/UploadDocument/GetDownloadPDF?id=${id}`;
-  //   return this.http.get(url, {
-  //     headers: new HttpHeaders({
-  //       'Content-Type': 'application/pdf',
-  //     }),
-  //     observe: 'response',
-  //     responseType: 'blob',
-  //   });
-  // }
+  downloadPdf(fileName: string , id: any): Observable<Blob> {
+    const url = environment.baseURLNew+"api/UploadDocument/GetDownloadPDF?fileName=" + fileName + "&id=" + id ;
+    let res = this.http.get(url, { headers: headers , responseType: 'blob'});
+    return res;
+  }
 
   GetAllPDF(): Observable<any> {
     var url = environment.baseURLNew + "api/UploadDocument/GetDocument";
